@@ -12,8 +12,6 @@ get_account_key = ->
   return account_key
 
 bing_count = (query, callback) ->
-  if not bing_count.keyval?
-    bing_count.keyval = require 'mongo_keyval'
   {get,set} = bing_count.keyval
   get query, (cached_result) ->
     if cached_result?
@@ -28,6 +26,8 @@ bing_count = (query, callback) ->
       result = JSON.parse(body).d.results[0].WebTotal
       set query, result, ->
         callback result
+
+bing_count.keyval = require 'mongo_keyval'
 
 if module? and module.exports?
   module.exports = bing_count
