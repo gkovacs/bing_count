@@ -1,0 +1,32 @@
+{
+  "name": "bing_count",
+  "version": "1.0.0",
+  "description": "counts the number of bing search results for the given query",
+  "main": "bing_count.js",
+  "dependencies": {
+    "mongo_keyval": "^1.0.2",
+    "js-yaml": "^3.2.7",
+    "request": "^2.53.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gkovacs/bing_count.git"
+  },
+  "keywords": [
+    "bing",
+    "count",
+    "search",
+    "results",
+    "number"
+  ],
+  "author": "Geza Kovacs (http://github.com/gkovacs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkovacs/bing_count/issues"
+  },
+  "homepage": "https://github.com/gkovacs/bing_count"
+}
