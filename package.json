@@ -1,6 +1,6 @@
 {
   "name": "bing_count",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "counts the number of bing search results for the given query",
   "main": "bing_count.js",
   "dependencies": {

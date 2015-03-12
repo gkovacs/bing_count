@@ -23,7 +23,7 @@ bing_count = (query, callback) ->
       #console.log err
       #console.log response
       #console.log body
-      result = JSON.parse(body).d.results[0].WebTotal
+      result = parseInt JSON.parse(body).d.results[0].WebTotal
       set query, result, ->
         callback result
 

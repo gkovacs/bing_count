@@ -33,7 +33,7 @@
         }
       }, function(err, response, body){
         var result;
-        result = JSON.parse(body).d.results[0].WebTotal;
+        result = parseInt(JSON.parse(body).d.results[0].WebTotal);
         return set(query, result, function(){
           return callback(result);
         });
