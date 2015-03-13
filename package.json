@@ -1,11 +1,11 @@
 {
   "name": "bing_count",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "counts the number of bing search results for the given query",
   "main": "bing_count.js",
   "dependencies": {
-    "mongo_keyval": "^1.0.2",
     "js-yaml": "^3.2.7",
+    "mongo_keyval": "^1.0.4",
     "request": "^2.53.0"
   },
   "devDependencies": {},

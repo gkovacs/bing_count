@@ -41,6 +41,7 @@
     });
   };
   bing_count.keyval = require('mongo_keyval');
+  bing_count.keyval.collection = 'bingcount';
   if ((typeof module != 'undefined' && module !== null) && module.exports != null) {
     module.exports = bing_count;
   }

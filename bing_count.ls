@@ -28,6 +28,7 @@ bing_count = (query, callback) ->
         callback result
 
 bing_count.keyval = require 'mongo_keyval'
+bing_count.keyval.collection = 'bingcount'
 
 if module? and module.exports?
   module.exports = bing_count
