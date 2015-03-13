@@ -2,14 +2,16 @@ require! {
   'js-yaml'
   fs
   'request'
+  getsecret
 }
 
 get_account_key = ->
   if bing_count.account_key?
     return bing_count.account_key
-  {account_key} = jsYaml.safeLoad fs.readFileSync '.bing_keys.yaml', 'utf-8'
-  bing_count.account_key = account_key
-  return account_key
+  bing_count.account_key = getsecret('bing_account_key')
+  if not bing_count.account_key?
+    throw 'need to specify bing_account_key in .getsecret.yaml or as an environment variable'
+  return bing_count.account_key
 
 bing_count = (query, callback) ->
   {get,set} = bing_count.keyval
@@ -19,7 +21,7 @@ bing_count = (query, callback) ->
       return
     console.log 'fetching bing_count for ' + query
     url = 'https://api.datamarket.azure.com/Data.ashx/Bing/SearchWeb/v1/Composite?Query=' + escape("'" + query + "'") + '&$top=1&$format=JSON'
-    request {url: url, auth: {username: '', password: get_account_key(), sendImmediately: true}}, (err, response, body) ->
+    request {url: url, auth: {username: '', password: get_account_key('bing_account_key'), sendImmediately: true}}, (err, response, body) ->
       #console.log err
       #console.log response
       #console.log body

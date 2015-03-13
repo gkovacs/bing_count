@@ -17,11 +17,11 @@ bing_count('food', function(count) {
 
 ## Bing authentication
 
-Please place your credentials in a yaml file .bing_keys.yaml with the format
+Please place your credentials in a yaml file .getsecret.yaml with the format
 
-    account_key: your_app_secret_here
+    bing_account_key: your_app_secret_here
 
-Or set bing_count.account_key to the app secret
+Or set bing_count.account_key to the app secret, or specify the environment variable bing_account_key
 
 ## Caching
 
